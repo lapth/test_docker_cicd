@@ -1,8 +1,11 @@
+0. SSH with key
+  => ssh -i /ec2.pem ec2-user@ec2-198-51-100-1.compute-1.amazonaws.com
+
 1. Pull Jenkins images
-docker pull jenkins/jenkins:lts
+  => docker pull jenkins/jenkins:lts
 
 2. Run Jenkins
-docker run -d --rm -u jenkins:docker --privileged -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/local/bin/docker -p 8080:8080 jenkins/jenkins:lts
+  => docker run -d --rm -u jenkins:docker --privileged -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/local/bin/docker -p 8080:8080 jenkins/jenkins:lts
 
 Issues:
 - /var/run/docker.sock: connect: permission denied
