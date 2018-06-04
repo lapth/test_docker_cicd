@@ -4,17 +4,23 @@
 1. Pull Jenkins images
   => docker pull jenkins/jenkins:lts
 
+2. Build customize jenkins to install needed thing
+  => mkdir cus_jenkins
+  => cd cus_jenkis
+  => vi Dockerfile   <= refer Dockerfile
+  => docker build -t cus_jenkis .
+  
 2. Run Jenkins
-  => docker run -d --rm -u jenkins:docker --privileged -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/local/bin/docker -p 8080:8080 jenkins/jenkins:lts
+  => docker run -d --rm -v jenkins_home:/var/jenkins_home -p 8080:8080 jenkins/jenkins:lts
 
 Issues:
+- Build project with maven
+  => tutorial from jenkins team
+    => using jenkins pipeline
+      => problem: need docker in docker, can not access host docker, ... <= do not use this solution
+  => work around to resolve this issue: install distributed maven inside this container
+  
 - /var/run/docker.sock: connect: permission denied
   => sudo groupadd docker
   => sudo usermod -aG docker $USER
   => sudo reboot
-
-- Docker: not found in Jenkins pipeline, permission denied, ..
-  => sudo chmod +rx /usr/bin/* -R
-  => sudo chmod +rx /run/* -R
-  
-- Build java project with maven in Jenkins => use Jenkinsfile and Jenkins pipeline
