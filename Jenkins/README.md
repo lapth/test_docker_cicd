@@ -1,6 +1,11 @@
-Steps with Jenkis
+Steps with Jenkins
 
 0. Prepare one RedHat EC2
+  => See this to install Docker: https://forums.aws.amazon.com/thread.jspa?messageID=574126
+  => sudo yum install yum-utils
+  => sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+  => sudo yum install docker
+  
 1. Pull Jenkins images
   => docker pull lapth/jenkins:v1
 
@@ -21,7 +26,8 @@ Known Issues:
     => make new Dockerfile to pull original Jenkins
     => install distributed maven
       => work as expected
-  
+    => built image at: lapth/jenkins:v1
+    
 - /var/run/docker.sock: connect: permission denied
   => sudo groupadd docker
   => sudo usermod -aG docker $USER
