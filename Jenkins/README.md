@@ -1,5 +1,6 @@
 Steps with Jenkis
 
+0. Prepare one RedHat EC2
 1. Pull Jenkins images
   => docker pull lapth/jenkins:v1
 
