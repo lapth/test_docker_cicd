@@ -1,10 +1,17 @@
+Steps with Jenkis
+
 1. Pull Jenkins images
   => docker pull lapth/jenkins:v1
 
 2. Run Jenkins
   => docker run -d --rm -v jenkins_home:/var/jenkins_home -p 8080:8080 lapth/jenkins:v1
 
-Issues:
+3. Login Jenkins
+4. Create new empyt jobs
+  => Pull project from Git: https://github.com/lapth/test-docker-app.git
+  => Build with Maven as normally
+
+Known Issues:
 - Build project with maven
   => tutorial from jenkins team
     => using jenkins pipeline
