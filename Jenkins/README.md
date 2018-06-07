@@ -1,8 +1,10 @@
-Using Jenkins Ocean Blue:
+**Using Jenkins Ocean Blue:**
+
 1. docker run -u root --rm -d -p 8080:8080 -p 50000:50000 -v /root/.ssh/id_rsa:/root/.ssh/id_rsa -v jenkins-home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 2. Create new Pipeline jobs for: https://github.com/lapth/test-docker-app.git
 
-===> Failed solution
+**Folowwing is the tried failed solution** Just noted
+
 Steps with Jenkins
 
 0. Prepare one RedHat EC2
