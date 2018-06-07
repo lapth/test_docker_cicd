@@ -15,9 +15,9 @@ chmod 777 -R /home/docker/wildfly_deployments
   
    Here we mount the wildfly_deployments to /opt/jboss/wildfly/standalone/deployments in container then when we copy the bin file into this folder, wildfly can detect and deploy it as well.
   
-  For Dev:
+   For Dev:
   
-  docker run -d --rm -v /home/docker/wildfly_deployments:/opt/jboss/wildfly/standalone/deployments -p 8080:8080 -p 8787:8787 -p 9990:9990 jboss/wildfly /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 --debug
+   docker run -d --rm -v /home/docker/wildfly_deployments:/opt/jboss/wildfly/standalone/deployments -p 8080:8080 -p 8787:8787 -p 9990:9990 jboss/wildfly /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 --debug
   
   Here we mount the wildfly_deployments to /opt/jboss/wildfly/standalone/deployments in container then when we copy the bin file into this folder, wildfly can detect and deploy it as well.
   
