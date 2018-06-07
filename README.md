@@ -1,4 +1,4 @@
-# test_docker_cicd
+# Common settup
 
 **Settup SSH-key authentication to copy file from Jenkins server to Staging/Pro server**
 ```
@@ -24,14 +24,4 @@ Copy and append the id_rsa.pub content from sv1 into the /home/docker/.ssh/autho
 ssh docker@sv2 ls
 ```
 
-**Setup web server with Wildfly**
-
-1. Prepare this folder: /home/docker/wildfly_deployments
-   
-   The war file will be deploy to /home/docker/wildfly_deployments in sv2 then Wildfly will trigger re-deploy automatically.
-
-2. To ensure, we will not face with the access permission denied issue, run
-```
-chmod 777 -R /home/docker/wildfly_deployments
-```
    
